@@ -23,7 +23,7 @@ let tempo = document.querySelector('.tempo')
 let cartaA = ''
 let cartaB = ''
 let temporizador = 0
-const duracaoTempo = 1
+const duracaoTempo = 60
 
 // FUNÇÕES
 
