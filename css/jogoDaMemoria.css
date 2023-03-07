@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tempo {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+body {
+    background-image: url("../imagensCartas/background1.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.btnInfo {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.2em;
+    background-color: #119dd9;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 2px 3px 0 white;
+    color: #ecb40c;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.btnSair {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.2em;
+    background-color: #ecb40c;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    box-shadow: 2px 3px 0 white;
+    color: rgb(255, 42, 0);
+    cursor: pointer;
+}
+
+header {
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contador p {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 0.8em;
+}
+
+.tempo {
+    font-size: 3em;
+    color: rgb(236, 218, 16);
+    text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.7);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 500px;
+    max-width: 90%;
+    margin: 40px auto;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carta {
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all .5s ease;
+}
+
+.frente {
+    transform: rotateY(180deg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    border: solid 2px #ffffffbb;
+}
+
+.costas {
+    background-image: url("../imagensCartas/faceCostas.gif");
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    border: solid 2px #b2a1054b;
+}
+
+.virada {
+    transform: rotateY(180deg);
+}
+
+.desabilitada {
+    transform: rotateY(180deg) scale(.9);
+    border: solid 2px #ffffff;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+/* Modal personalizado */
+
+.conteudo {
+    background-color: rgb(0, 153, 255);
+    margin: 0 40px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: solid 4px white;
+}
+
+.conteudo h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: normal;
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.conteudo h3 {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+.btnIniciarPartida {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btnNovaPartida2,
+.btnNovaPartida,
+.btnIniciarPartida {
+    margin-top: 50px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #ecb40c;
+    font-size: 1.5em;
+    font-family: 'Luckiest Guy', cursive;
+    text-shadow: 3px 3px 1px rgb(255, 255, 255);
+    box-shadow: 3px 3px 1px rgb(255, 255, 255);
+    color: rgb(49, 19, 3);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 80%;
+    max-width: 300px;
+}
+
+.desativada {
+    display: none;
+}
+
+
+
+/* Modal */
+
+.fundoModal {
+    background-color: rgba(0, 0, 0, 0.97);
+    width: 98%;
+    height: 99vh;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: double 10px rgb(255, 255, 255);
+    box-shadow: 0 0 0 5px rgb(0, 0, 0);
+}
+
+.fundoModal .btnSair {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.4em;
+    background-color: #ecb40c;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    box-shadow: 2px 3px 0 white;
+    color: rgb(255, 42, 0);
+    cursor: pointer;
+}
+
+.conteudoModal {
+    color: white;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mostrarModal {
+    display: flex;
+}
+
+
+.conteudoModal h1,
+.conteudoModal p{
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+}
+.conteudoModal h1{
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#modalInfo .conteudoModal p::after{
+    content: "";
+    height: 3px;
+    width: 100%;
+    border-bottom: dotted 3px white;
+    display: block;
+    margin-top: 10px;
+}
+
+#modalInfo .conteudoModal {
+    margin: 0 20px;
+    width: 80%;
+    max-width: 400px;
+}
+
+#modalInfo .conteudoModal h1{
+    font-size: 2em;
+
+}
+#modalInfo .conteudoModal p{
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 10px;
+}

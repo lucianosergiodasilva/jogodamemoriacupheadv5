@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuphead Jogo da memória</title>
+    <link rel="shortcut icon" href="./imagensCartas/faviconCup.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/jogoDaMemoria.css">
+
+</head>
+
+<body>
+    <!-- Botão informações sobre o jogo -->
+    <button id="btnInfo" class="btnInfo">I</button>
+
+    <!-- Iniciar partida -->
+    <button id="btnIniciarPartida" class="btnIniciarPartida desativada">Iniciar partida</button>
+
+    <!-- Informações sobre o jogo -->
+    <section id="modalInfo" class="fundoModal">
+        <button id="btnFecharModalInfo" class="btnSair">X</button>
+        <div class="conteudoModal">
+            <h1>Informações</h1>
+            <!-- <p>Insira um nome para gravar no placar e poder comparar seu desempenho em outras partidas.</p> -->
+            <p>Você terá um tempo de 90 segundos para formar 10 pares, se conseguir virar todas as 20 cartas a tempo
+                será o vencedor.</p>
+            <p>Caso não consiga formar todos os pares a tempo, o jogo encerrará sua jogada e mostrará onde estão todos
+                os pares.</p>
+        </div>
+    </section>
+
+    <header>
+        <span class="contador">
+            <p>Tempo</p>
+            <span class="tempo">
+                00
+            </span>
+        </span>
+    </header>
+
+    <div class="grid" id="tabuleiro">
+        <!--   
+        <div class="carta virada" id="carta1">
+            <div class=" face frente desabilitada"><img src="./imagensCartas/1.gif" alt=""></div>
+            <div class="face costas"></div>
+        </div> 
+    -->
+    </div>
+
+    <!-- Mensagem quando o tempo termina -->
+    <section id="modalPerdeu" class="fundoModal">
+
+        <!-- Botão sair -->
+        <button id="btnFecharModalPerdeu" class="btnSair">X</button>
+
+        <div class="conteudoModal">
+            <img src="./imagensCartas/triste.png" class="imgPerdeu" alt="">
+            <div class="conteudo">
+                <h1>Tempo esgotado!</h1>
+                <h3>Você não conseguiu virar todas as cartas a tempo.</h3>
+            </div>
+            <button class="btnNovaPartida">Nova partida</button>
+        </div>
+    </section>
+
+    <!-- Mensagem quando acerta tudo -->
+    <section id="modalGanhou" class="fundoModal">
+
+        <!-- Botão sair -->
+        <button id="btnFecharModalGanhou" class="btnSair">X</button>
+
+        <div class="conteudoModal">
+            <img src="./imagensCartas/feliz.png" class="imgGanhou" alt="">
+            <div class="conteudo">
+                <h1>Parabéns!</h1>
+                <h3>Você conseguiu virar todas as cartas a tempo.</h3>
+            </div>
+            <!-- <button class="btnNovaPartida">Nova partida</button> -->
+        </div>
+    </section>
+
+    <audio preload autoplay loop id="musicaDeFundo" src="./sons/RandySharp-SlimeTime.mp3"></audio>
+    <audio preload id="somAcertou" src="./sons/acertou.mp3"></audio>
+    <audio preload id="errou" src="./sons/errou.mp3"></audio>
+    <audio preload id="perdeu" src="./sons/perdeu.mp3"></audio>
+    <audio preload id="vencedor" src="./sons/vencedor.mp3"></audio>
+    <audio preload id="clique" src="./sons/clique.mp3"></audio>
+
+    <script src="./js/jogoDaMemoria.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/dad3f7dcfb.js" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
